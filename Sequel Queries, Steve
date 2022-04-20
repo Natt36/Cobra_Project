@@ -1,0 +1,59 @@
+--Q:Which country has the most case requests? A:By far, India has the most followed distantly by China.
+
+SELECT country_of_citizenship
+, COUNT (case_number)
+FROM salary_data_states_corrected 
+GROUP BY country_of_citizenship
+ORDER BY 2 DESC
+
+
+--Q:What is the overall most common job title request? A: By far, software engineers are making the most requests.
+
+SELECT --country_of_citizenship
+job_title_subgroup
+, COUNT (case_number) as CountBasie
+FROM salary_data_states_corrected --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+GROUP BY --country_of_citizenship, 
+job_title_subgroup
+ORDER BY 2 DESC
+
+
+--Q:What is the most common job title request by country? A: By far, Indian software engineers are making the most requests.
+
+SELECT country_of_citizenship
+, job_title_subgroup
+, COUNT (case_number) as CountBasie
+FROM salary_data_states_corrected --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+GROUP BY country_of_citizenship, job_title_subgroup
+ORDER BY 3 DESC
+
+--Q:What is the most common job title request by country that is not software engineer? A: Indian business analysts are the most. What's really interesting
+-- is that teachers from the Phillipines is second. Why? 
+
+SELECT job_title_subgroup
+, country_of_citizenship
+, COUNT (case_number) as CountBasie
+FROM salary_data_states_corrected --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+AND job_title_subgroup NOT LIKE '%software%'
+GROUP BY country_of_citizenship,
+job_title_subgroup
+ORDER BY 3 DESC
+
+
+--Q: What is the count of requests in teachers by country?
+
+SELECT job_title_subgroup
+, country_of_citizenship
+, COUNT (case_number) as CountBasie
+FROM salary_data_states_corrected --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+AND job_title_subgroup LIKE '%teacher%'
+GROUP BY country_of_citizenship,
+job_title_subgroup
+ORDER BY 1,3 DESC
+
+
+
