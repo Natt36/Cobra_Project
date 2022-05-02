@@ -1,0 +1,47 @@
+Where are software engineers coming from?
+SELECT job_title_subgroup
+, country_of_citizenship
+, COUNT (case_number) as CaseCount
+FROM salary --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+AND job_title_subgroup LIKE '%software%' 
+GROUP BY country_of_citizenship,
+job_title_subgroup
+ORDER BY 1,3 DESC
+
+Which country hires the most data scientists and data analysts?
+SELECT job_title_subgroup
+, country_of_citizenship
+, COUNT (case_number) as CaseCount
+FROM salary --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+AND job_title_subgroup LIKE '%data%' 
+GROUP BY country_of_citizenship,
+job_title_subgroup
+ORDER BY 3 DESC
+
+Which countries have the highest paying data jobs?
+SELECT job_title_subgroup
+, country_of_citizenship
+--, COUNT (case_number) as CaseCount
+, prevailing_wage_per_year
+, paid_wage_per_year
+FROM salary --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+AND job_title_subgroup LIKE '%data%' 
+GROUP BY country_of_citizenship,
+job_title_subgroup
+ORDER BY 4 DESC
+
+Which countries have the highest average pay in data-related jobs?
+SELECT job_title_subgroup
+, country_of_citizenship
+--, COUNT (case_number) as CaseCount
+, prevailing_wage_per_year
+, avg(paid_wage_per_year)
+FROM salary --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+AND job_title_subgroup LIKE '%data%' 
+GROUP BY country_of_citizenship,
+job_title_subgroup
+ORDER BY 4 DESC
