@@ -1,0 +1,110 @@
+Where are software engineers coming from?
+
+SELECT job_title_subgroup
+, country_of_citizenship
+, COUNT (case_number) as CaseCount
+FROM salary --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+AND job_title_subgroup LIKE '%software%' 
+GROUP BY country_of_citizenship,
+job_title_subgroup
+ORDER BY 1,3 DESC
+
+job_title_subgroup	country_of_citizenship	CaseCount
+software engineer	INDIA	5630
+software engineer	CHINA	837
+software engineer	CANADA	220
+software engineer	RUSSIA	87
+software engineer	SOUTH KOREA	83
+software engineer	UKRAINE	66
+software engineer	TAIWAN	66
+software engineer	PAKISTAN	58
+software engineer	NEPAL	55
+software engineer	MEXICO	53
+software engineer	FRANCE	49
+software engineer	BRAZIL	44
+software engineer	ISRAEL	35
+software engineer	UNITED KINGDOM	32
+software engineer	TURKEY	31
+software engineer	GERMANY	30
+software engineer	BELARUS	28
+software engineer	PHILIPPINES	28
+software engineer	IRAN	25
+software engineer	POLAND	23
+software engineer	AUSTRALIA	20
+software engineer	BANGLADESH	20
+software engineer	VIETNAM	19
+software engineer	ITALY	19
+software engineer	SRI LANKA	18
+software engineer	SPAIN	16
+software engineer	JAPAN	15
+software engineer	EGYPT	15
+software engineer	ARGENTINA	14
+software engineer	ROMANIA	13
+software engineer	HONG KONG	12
+software engineer	THAILAND	10
+software engineer	IRELAND	9
+software engineer	MALAYSIA	9
+software engineer	UNITED STATES OF AMERICA	9
+software engineer	BULGARIA	8
+software engineer	SINGAPORE	8
+software engineer	HUNGARY	8
+software engineer	SWEDEN	8
+software engineer	INDONESIA	8
+software engineer	COSTA RICA	7
+software engineer	NIGERIA	7
+software engineer	SOUTH AFRICA	7
+software engineer	NETHERLANDS	6
+software engineer	ARMENIA	6
+software engineer	JORDAN	5
+software engineer	CZECH REPUBLIC	5
+software engineer	GREECE	5
+software engineer	PORTUGAL	5
+software engineer	NEW ZEALAND	5
+software engineer	LEBANON	4
+software engineer	KAZAKHSTAN	4
+software engineer	NORWAY	4
+software engineer	SERBIA	4
+software engineer	CROATIA	4
+software engineer	COLOMBIA	4
+software engineer	CHILE	3
+software engineer	ETHIOPIA	3
+software engineer	SLOVAKIA	3
+software engineer	VENEZUELA	3
+software engineer	MONGOLIA	3
+software engineer	LITHUANIA	2
+software engineer	CAMEROON	2
+software engineer	DENMARK	2
+software engineer	KYRGYZSTAN	2
+software engineer	AUSTRIA	2
+software engineer	LATVIA	2
+software engineer	ECUADOR	2
+software engineer	MOROCCO	2
+software engineer	EL SALVADOR	2
+software engineer	BELGIUM	2
+software engineer	SAUDI ARABIA	2
+software engineer	SYRIA	2
+software engineer	HONDURAS	2
+software engineer	TAJIKISTAN	1
+software engineer	BURMA (MYANMAR)	1
+software engineer	DEMOCRATIC REPUBLIC OF CONGO	1
+software engineer	GHANA	1
+software engineer	FINLAND	1
+software engineer	PALESTINE	1
+software engineer	TANZANIA	1
+software engineer	HAITI	1
+software engineer	UNITED ARAB EMIRATES	1
+software engineer	SWITZERLAND	1
+software engineer	ESTONIA	1
+software engineer	KUWAIT	1
+software engineer	UZBEKISTAN	1
+software engineer	KENYA	1
+software engineer	MONTENEGRO	1
+software engineer	AZERBAIJAN	1
+software engineer	GEORGIA	1
+software engineer	ZIMBABWE	1
+software engineer	LIBYA	1
+software engineer	TUNISIA	1
+software engineer	MOLDOVA	1
+software engineer	DOMINICAN REPUBLIC	1
+software engineer	BELIZE	1
