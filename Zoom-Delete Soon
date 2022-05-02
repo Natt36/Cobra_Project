@@ -1,0 +1,11 @@
+SELECT job_title_subgroup
+, country_of_citizenship
+--, COUNT (case_number) as CaseCount
+, prevailing_wage_per_year
+, avg(paid_wage_per_year)
+FROM salary_data_states_corrected --LIMIT 5000
+WHERE country_of_citizenship <> 'NA'
+AND job_title_subgroup LIKE '%data%' 
+GROUP BY country_of_citizenship,
+job_title_subgroup
+ORDER BY 4 DESC
